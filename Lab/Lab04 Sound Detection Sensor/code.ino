@@ -12,6 +12,5 @@ void loop() {
   } else {
     Serial.println("ไม่มีเสียง");
   }
-  
   delay(100);
 }
