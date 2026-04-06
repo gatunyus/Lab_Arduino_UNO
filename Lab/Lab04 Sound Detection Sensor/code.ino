@@ -9,8 +9,7 @@ void loop() {
   int val = digitalRead(soundPin);
   if ( val == 0 ) {
     Serial.println("มีเสียง")
-  } 
-  else {
+  } else {
     Serial.println("ไม่มีเสียง")
   }
 }
