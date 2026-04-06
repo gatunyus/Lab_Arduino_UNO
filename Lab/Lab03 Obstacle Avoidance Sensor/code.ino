@@ -1,4 +1,4 @@
-int irPin = 4; // ต่อขา OUT เข้า Pin 4
+int irPin = 2; // ต่อขา OUT เข้า Pin 2
 
 void setup() {
   Serial.begin(9600);
@@ -7,6 +7,10 @@ void setup() {
 
 void loop() {
   int val = digitalRead(irPin);
-  Serial.println(val); // เอามือบังเซนเซอร์ ค่าจะเปลี่ยนเป็น 0 (LOW)
+  if ( val == 0 ) {
+    Serial.println("มืด");
+  } else {
+    Serial.println("สว่าง");
+  }
   delay(100);
 }
