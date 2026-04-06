@@ -7,6 +7,10 @@ void setup() {
 
 void loop() {
   int val = digitalRead(vibPin);
-  Serial.println(val); // ลองเคาะโมดูล ค่าจะเปลี่ยนระหว่าง 0 กับ 1
+  if (val == 0) {
+    Serial.println("ไม่สั่น");
+  } else {
+    Serial.println("สั่น!!"); 
+  }
   delay(100);
 }
