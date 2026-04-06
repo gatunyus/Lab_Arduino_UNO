@@ -8,9 +8,9 @@ void setup() {
 void loop() {
   int val = digitalRead(irPin);
   if ( val == 0 ) {
-    Serial.println("มืด");
+    Serial.println("มีสิ่งกีดขวาง");
   } else {
-    Serial.println("สว่าง");
+    Serial.println("ไม่มีสิ่งกีดขวาง");
   }
   delay(100);
 }
