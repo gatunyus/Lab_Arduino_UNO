@@ -8,8 +8,10 @@ void setup() {
 void loop() {
   int val = digitalRead(soundPin);
   if ( val == 0 ) {
-    Serial.println("มีเสียง")
+    Serial.println("มีเสียง");
   } else {
-    Serial.println("ไม่มีเสียง")
+    Serial.println("ไม่มีเสียง");
   }
+  
+  delay(100);
 }
