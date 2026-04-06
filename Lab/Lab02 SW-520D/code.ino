@@ -1,4 +1,4 @@
-int tiltPin = 3; // ต่อขา DO เข้า Pin 3
+int tiltPin = 2; // ต่อขา DO เข้า Pin 2
 
 void setup() {
   Serial.begin(9600);
