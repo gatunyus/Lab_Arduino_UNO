@@ -1,7 +1,7 @@
 // ขา R, G, B ต้องต่อเข้าขาที่มีสัญลักษณ์ ~ (PWM)
-int redPin = 9;   
-int greenPin = 10;
-int bluePin = 11; 
+int redPin = 9; // ต่อขา R เข้า Digital 9
+int greenPin = 10; // ต่อขา R เข้า Digital 10
+int bluePin = 11;  // ต่อขา R เข้า Digital 11
 
 void setup() {
   pinMode(redPin, OUTPUT);

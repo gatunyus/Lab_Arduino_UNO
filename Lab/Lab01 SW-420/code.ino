@@ -1,4 +1,4 @@
-int vibPin = 2; // ต่อขา DO เข้า Pin 2
+int vibPin = 2; // ต่อขา DO เข้า Digital 2
 
 void setup() {
   Serial.begin(9600);

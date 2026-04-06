@@ -1,4 +1,4 @@
-int irPin = 2; // ต่อขา OUT เข้า Pin 2
+int irPin = 2; // ต่อขา OUT เข้า Digital 2
 
 void setup() {
   Serial.begin(9600);
