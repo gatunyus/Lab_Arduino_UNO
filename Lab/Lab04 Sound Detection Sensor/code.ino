@@ -7,6 +7,10 @@ void setup() {
 
 void loop() {
   int val = digitalRead(soundPin);
-  Serial.println(val); // ลองปรบมือหรือเป่าลมใส่ไมค์ ค่าจะเปลี่ยน
-  delay(100);
+  if ( val == 0 ) {
+    Serial.println("มีเสียง")
+  } 
+  else {
+    Serial.println("ไม่มีเสียง")
+  }
 }
