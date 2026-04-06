@@ -1,4 +1,4 @@
-int ldrPin = A1; // ต่อเข้า Analog A1
+int ldrPin = A0; // ต่อเข้า Analog A0
 
 void setup() {
   Serial.begin(9600);
@@ -6,6 +6,10 @@ void setup() {
 
 void loop() {
   int val = analogRead(ldrPin);
-  Serial.println(val); // เอามือปิดเซนเซอร์ ค่าจะเปลี่ยนไป
+  if (val > 600) {
+    Serial.println("มืด");
+  } else {
+    Serial.println("สว่าง");
+  }
   delay(500);
 }
