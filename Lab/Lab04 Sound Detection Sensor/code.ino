@@ -1,5 +1,5 @@
-
 int soundPin = A0; 
+
 void setup() {
   Serial.begin(9600);
   pinMode(soundPin, INPUT);
