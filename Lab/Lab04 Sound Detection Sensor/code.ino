@@ -1,16 +1,12 @@
-int soundPin = 2; // ต่อขา DO เข้า Digital 2
 
+int soundPin = A0; 
 void setup() {
   Serial.begin(9600);
   pinMode(soundPin, INPUT);
 }
 
 void loop() {
-  int val = digitalRead(soundPin);
-  if ( val == 0 ) {
-    Serial.println("มีเสียง");
-  } else {
-    Serial.println("ไม่มีเสียง");
-  }
-  delay(100);
+  int sensorValue = analogRead(soundPin);
+  Serial.println(sensorValue);
+  delay(10);  
 }

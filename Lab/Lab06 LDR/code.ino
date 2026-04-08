@@ -1,4 +1,4 @@
-int ldrPin = A0; // ต่อเข้า Analog A0
+int ldrPin = A0;
 
 void setup() {
   Serial.begin(9600);

@@ -1,3 +1,4 @@
+// Download Library EmonLib From Library Manager
 #include "EmonLib.h"
 EnergyMonitor emon1; // สร้าง Object สำหรับวัดไฟ
 

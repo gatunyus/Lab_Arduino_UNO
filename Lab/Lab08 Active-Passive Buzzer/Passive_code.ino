@@ -1,21 +1,21 @@
-// ไฟล์: PassiveBuzzer.ino
-int buzzerPin = 8; // ต่อขา + เข้า Digital 8
+// PassiveBuzzer.ino
+int buzzerPin = 2; // + from module to D2 from board
 
 void setup() {
-  // ไม่ต้องประกาศ pinMode ก็ได้ เพราะคำสั่ง tone() จะจัดการให้เอง
+  // No need to declare pinMode because the tone() is automatic handle
 }
 
 void loop() {
-  // tone(ขา, ความถี่Hz)
-  tone(buzzerPin, 262); // โด (C4)
+  // tone(pin, Hz)
+  tone(buzzerPin, 262); // Do (C4)
   delay(500);
   
-  tone(buzzerPin, 294); // เร (D4)
+  tone(buzzerPin, 294); // Re (D4)
   delay(500);
   
-  tone(buzzerPin, 330); // มี (E4)
+  tone(buzzerPin, 330); // Mi (E4)
   delay(500);
-
-  noTone(buzzerPin);    // หยุดส่งเสียง
+  // Silence
+  noTone(buzzerPin);   
   delay(1000);
 }

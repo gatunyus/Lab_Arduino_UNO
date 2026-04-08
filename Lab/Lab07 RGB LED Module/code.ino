@@ -1,7 +1,7 @@
-// ขา R, G, B ต้องต่อเข้าขาที่มีสัญลักษณ์ ~ (PWM)
-int redPin = 9; // ต่อขา R เข้า Digital 9
-int greenPin = 10; // ต่อขา R เข้า Digital 10
-int bluePin = 11;  // ต่อขา R เข้า Digital 11
+//  R, G, B are PWM
+int redPin = 2; // R from module to D2 from board
+int greenPin = 3; // G from module to D2 from board
+int bluePin = 4;  // B from module to D2 from board
 
 void setup() {
   pinMode(redPin, OUTPUT);

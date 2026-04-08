@@ -1,16 +1,16 @@
-// ไฟล์: ActiveBuzzer.ino
-int buzzerPin = 8; // ต่อขา + เข้า Digital 8
+// ActiveBuzzer
+int buzzerPin = 2; // + from module to D2 from board
 
 void setup() {
   pinMode(buzzerPin, OUTPUT);
 }
 
 void loop() {
-  // สั่งให้ดัง (HIGH)
+  // Make Noise (HIGH)
   digitalWrite(buzzerPin, HIGH); 
   delay(1000); 
   
-  // สั่งให้เงียบ (LOW)
+  // Silence (LOW)
   digitalWrite(buzzerPin, LOW);  
   delay(1000);
 }

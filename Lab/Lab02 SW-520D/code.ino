@@ -1,4 +1,4 @@
-int tiltPin = 2; // ต่อขา DO เข้า Digital 2
+int tiltPin = 2; // D0 from module to D2 from board
 
 void setup() {
   Serial.begin(9600);
@@ -7,6 +7,6 @@ void setup() {
 
 void loop() {
   int val = digitalRead(tiltPin);
-  Serial.println(val); // ลองจับโมดูลเอียงไปมา ค่าจะเปลี่ยน
+  Serial.println(val);
   delay(100);
 }
