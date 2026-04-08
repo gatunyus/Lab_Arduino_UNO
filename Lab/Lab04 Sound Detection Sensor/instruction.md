@@ -33,7 +33,7 @@ void setup() {
 void loop() {
   int sensorValue = analogRead(soundPin);
   Serial.println(sensorValue);
-  delay(10);  // หน่วงเวลาสั้นๆ เพื่อให้กราฟสมูท
+  delay(10);  
 }
 ```
 
