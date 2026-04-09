@@ -15,7 +15,7 @@
 | **B** (Blue) | **D4** (Digital Pin 4) |
 | **GND** (หรือ -) | GND |
 
-![alt text](image.png)
+![Circuit](../Images/c07.png)
 
 *(หมายเหตุ: โมดูล RGB บางรุ่นอาจเป็นแบบ Common Anode ซึ่งจะต้องต่อขา Common เข้ากับ 5V แทน GND และใช้วิธีสั่ง `analogWrite(pin, 0)` เพื่อให้ไฟติดแทน)*
 
@@ -49,8 +49,8 @@ void loop() {
 
 Output: 
 
-![alt text](image-1.png)
+![Output](../Images/o07_1.png)
 
-![alt text](image-2.png)
+![Output](../Images/o07_2.png)
 
-![alt text](image-3.png)
+![Output](../Images/o07_3.png)

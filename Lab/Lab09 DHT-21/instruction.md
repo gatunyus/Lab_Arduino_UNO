@@ -19,7 +19,7 @@
 | **GND / -** (กราวด์) | GND |
 | **DATA / OUT** (สายสัญญาณ) | **D2** (Digital Pin 2) |
 
-![alt text](image.png)
+![Circuit](../Images/c09.png)
 
 ## Code
 อัปโหลดโค้ดด้านล่างนี้ลงในบอร์ด Arduino ของคุณ (ตั้งค่า Baud Rate ใน Serial Monitor เป็น `9600`):
@@ -53,4 +53,4 @@ void loop() {
 
 Output : 
 
-![alt text](image-1.png)
+![Output](../Images/o09.png)

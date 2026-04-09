@@ -14,7 +14,7 @@
 | **GND** (หรือ G) | GND |
 | **A0 / OUT** (Analog Output) | **A0** (Analog In) |
 
-![alt text](image.png)
+![Circuit](../Images/c04.png)
 
 *(1. หมายเหตุ: โมดูลเซ็นเซอร์เสียงบางรุ่นอาจมีทั้งขา A0 และ D0 สำหรับแลปนี้ให้ต่อสายสัญญาณที่ขา **A0**)*
 
@@ -39,4 +39,4 @@ void loop() {
 
 Output: 
 
-![alt text](image-1.png)
+![Output](../Images/o04.png)

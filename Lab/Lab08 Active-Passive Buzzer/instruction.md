@@ -14,7 +14,7 @@
 | **+** (หรือ VCC / ขาที่ยาวกว่า) | **D2** (Digital Pin 2) |
 | **-** (หรือ GND / ขาที่สั้นกว่า) | GND |
 
-![alt text](image.png)
+![Circuit](../Images/c08.png)
 
 ## Code 1: Active Buzzer (ส่งเสียงเตือนปกติ)
 อัปโหลดโค้ดด้านล่างนี้ หากโมดูลของคุณคือ **Active Buzzer** (สั่งงานด้วย `digitalWrite`):

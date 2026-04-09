@@ -14,7 +14,7 @@
 | **GND** | GND |
 | **A0 / AO** (Analog Output) | **A0** (Analog In) |
 
-![alt text](image.png)
+![Circuit](../Images/c06.png)
 
 ## Code
 อัปโหลดโค้ดด้านล่างนี้ลงในบอร์ด Arduino ของคุณ (ตั้งค่า Baud Rate ใน Serial Monitor เป็น `9600`):
@@ -41,4 +41,4 @@ void loop() {
 
 Output: 
 
-![alt text](image-1.png)
+![Output](../Images/o06.png)

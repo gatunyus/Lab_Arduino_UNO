@@ -19,7 +19,7 @@
 | **g** (ตรงกลาง) | **D4** |
 | **COM** (Common) | **GND** |
 
-![alt text](image.png)
+![Circuit](../Images/c12.png)
 
 *(⚠️ **ข้อควรระวัง:** ควรต่อตัวต้านทาน (Resistor) อนุกรมไว้ที่ขา COM ก่อนต่อลง GND เพื่อป้องกันไม่ให้หลอด LED ขาดเนื่องจากกระแสไฟเกิน)*
 
@@ -67,8 +67,8 @@ void showDigit(int n) {
 
 Output : 
 
-![alt text](image-1.png)
+![Output](../Images/o12_1.png)
 
-![alt text](image-2.png)
+![Output](../Images/o12_2.png)
 
-![alt text](image-3.png)
+![Output](../Images/o12_3.png)

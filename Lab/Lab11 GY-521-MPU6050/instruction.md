@@ -15,7 +15,7 @@
 | **SCL** (Clock) | **A5** (หรือขา SCL มุมขวาบนของบอร์ด) |
 | **SDA** (Data) | **A4** (หรือขา SDA มุมขวาบนของบอร์ด) |
 
-![alt text](image.png)
+![Circuit](../Images/c11.png)
 
 *(หมายเหตุ: ขา AD0 และ INT ในแลปนี้ปล่อยว่างไว้ได้เลย ไม่ต้องต่อ)*
 
@@ -79,4 +79,4 @@ void loop() {
 
 Output : 
 
-![alt text](image-1.png)
+![Output](../Images/o11.png)
