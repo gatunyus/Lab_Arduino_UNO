@@ -14,6 +14,10 @@
 3. **Connectivity:** USB Type-B Cable
 4. **Other:** Jumper Wires (M-M, M-F), Resistors 1-10kΩ
 
+##  หมายเหตุ (Note)
+
+หากไม่สามารถอัปโหลดโค้ดลงบอร์ด ให้ติดตั้ง Driver_CH34X ที่แนบไป
+
 ## โครงสร้างแลป (List of Experiments)
 ใน Repository นี้จะประกอบไปด้วยแลปต่างๆ ดังนี้:
 

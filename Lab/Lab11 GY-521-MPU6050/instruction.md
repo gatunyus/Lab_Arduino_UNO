@@ -3,7 +3,7 @@
 ## Overview (ภาพรวม)
 แลปนี้เป็นการทดลองใช้งาน `**MPU-6050 (เซ็นเซอร์วัดความเร่งและไจโรสโคป)**` แบบ 6 แกน (6-Axis IMU) ซึ่งเป็นเซ็นเซอร์ที่ใช้ตรวจจับการเคลื่อนไหว การเอียง และทิศทาง โดยสื่อสารกับบอร์ด Arduino ผ่านโปรโตคอล I2C
 
-ในแลปนี้ เราไม่ได้ใช้ไลบรารีสำเร็จรูป แต่จะเป็นการเขียนโค้ดอ่านค่าดิบ (Raw Data) จากรีจิสเตอร์ของเซ็นเซอร์โดยตรง โค้ดนี้จะดึงเฉพาะค่าความเร่งแกน Y และ Z มาคำนวณด้วยฟังก์ชันตรีโกณมิติ (`atan2`) เพื่อหา "องศาการเอียงแกน X (Roll Angle)" และจุดเด่นของแลปนี้คือการประยุกต์ใช้สมการ **Low-Pass Filter** เพื่อช่วยกรองสัญญาณรบกวน ทำให้ได้ค่าองศาที่ราบรื่นและนิ่งมากขึ้น เหมาะสำหรับนำไปต่อยอดทำหุ่นยนต์เดินสองขา (Balancing Robot), โดรน, หรือจอยสติ๊กตรวจจับการเคลื่อนไหว
+ในแลปนี้ เราจะเขียนโค้ดระดับพื้นฐานเพื่อดึงค่าความเร่ง (Acceleration) ดิบจากรีจิสเตอร์ของเซ็นเซอร์โดยตรง (ไม่ต้องใช้ไลบรารีสำเร็จรูป) เพื่อดูการเปลี่ยนแปลงของค่าแรงโน้มถ่วงในแนวแกน X, Y และ Z เมื่อเราขยับหรือเอียงโมดูลไปในทิศทางต่างๆ ซึ่งเป็นพื้นฐานสำคัญก่อนนำไปต่อยอดทำระบบกันสั่น (Gimbal)หรือโดรน
 
 ## Hardware Wiring (การต่อวงจร)
 การเชื่อมต่อสายสัญญาณ I2C ระหว่างโมดูล MPU-6050 และบอร์ด Arduino UNO สามารถทำได้ตามตารางนี้:
@@ -45,33 +45,24 @@ void setup() {
 }
 
 void loop() {
-  Wire.beginTransmission(MPU_addr);
-  Wire.write(0x3B); // Start at the first Data Register
+Wire.beginTransmission(MPU_addr);
+  Wire.write(0x3B);
   Wire.endTransmission(false);
   
-  // Read 6 bytes in sequence (X, Y, Z, 2 bytes each)
+  // ขออ่านข้อมูล 6 ไบต์ต่อเนื่อง (X, Y, Z แกนละ 2 ไบต์)
   Wire.requestFrom(MPU_addr, 6, true); 
   
-  // Skip X-axis (read and discard 2 bytes)
-  Wire.read(); 
-  Wire.read(); 
-  
-  // Read Y and Z axis values and divide by 16384.0 to convert to g-scale
+  // อ่านค่ามาทีละแกน (นำไบต์สูงมาต่อกับไบต์ต่ำ) แล้วหารด้วย 16384.0 เพื่อแปลงเป็นสเกล g
+  float AcX = (Wire.read() << 8 | Wire.read()) / 16384.0; 
   float AcY = (Wire.read() << 8 | Wire.read()) / 16384.0; 
   float AcZ = (Wire.read() << 8 | Wire.read()) / 16384.0; 
 
-  // Calculate raw roll in degrees (-180 to 180)
-  float raw_roll = atan2(AcY, AcZ) * 180.0 / PI;
-
-  // Apply calibration offset
-  raw_roll += roll_offset;
-
-  // Apply Low-Pass Filter to smooth the signal
-  filtered_roll = (alpha * raw_roll) + ((1.0 - alpha) * filtered_roll);
-  
-  Serial.print("Roll: "); 
-  Serial.print(filtered_roll); 
-  Serial.println(" degrees"); 
+  Serial.print("X: "); 
+  Serial.print(AcX); 
+  Serial.print(" | Y: "); 
+  Serial.print(AcY); 
+  Serial.print(" | Z: "); 
+  Serial.println(AcZ); 
 
   delay(100); 
 }
