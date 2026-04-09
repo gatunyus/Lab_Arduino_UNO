@@ -48,4 +48,5 @@ void loop() {
 
 Output:
 
-![Output](../Images/co5.png)
+![Output](../Images/o05.png)
+
